@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Claim Your $100 PayPal Gift Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #0b0e1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 460px;
+            width: 100%;
+            background: #12162a;
+            border-radius: 32px;
+            padding: 28px 22px 22px;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.06), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 200, 80, 0.05), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* ===== হেডার ===== */
+        .header {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gift-icon {
+            font-size: 52px;
+            margin-bottom: 4px;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #f5a623);
+            color: #0b0e1a;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 18px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+        }
+
+        .header h1 span {
+            background: linear-gradient(135deg, #ffd700, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .header .sub {
+            color: #8892b0;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        /* ===== গিফট কার্ড ডিসপ্লে ===== */
+        .gift-card-display {
+            background: linear-gradient(145deg, #1a1f3a, #0f1328);
+            border-radius: 20px;
+            padding: 22px 20px 18px;
+            margin: 18px 0 20px;
+            border: 1px solid rgba(255, 215, 0, 0.12);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .gift-card-display .card-label {
+            color: #8892b0;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .gift-card-display .card-amount {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin: 2px 0;
+        }
+
+        .gift-card-display .card-brand {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== ✅ কনভিন্সিং ডিসক্রিপশন ===== */
+        .convince-box {
+            background: rgba(255, 215, 0, 0.04);
+            border-radius: 14px;
+            padding: 16px 18px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255, 215, 0, 0.08);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .convince-box .big-text {
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .convince-box .big-text .gold {
+            color: #ffd700;
+        }
+
+        .convince-box .small-text {
+            color: #8892b0;
+            font-size: 13px;
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        .convince-box .small-text .check {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        /* ===== কনটেস্ট রুলস ===== */
+        .rules-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            position: relative;
+            z-index: 1;
+        }
+
+        .rules-box .rules-title {
+            color: #8892b0;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .rules-box .rules-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+        }
+
+        .rules-box .rules-list span {
+            color: #c8d0e0;
+            font-size: 13px;
+        }
+
+        .rules-box .rules-list span strong {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        /* ===== সিটিএ বাটন ===== */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 20px;
+            background: linear-gradient(135deg, #ffd700, #f5a623);
+            color: #0b0e1a;
+            font-size: 18px;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.25);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.35);
+        }
+
+        .cta-btn:active {
+            transform: scale(0.97);
+        }
+
+        .cta-btn small {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.7;
+            text-transform: none;
+            margin-top: 2px;
+        }
+
+        /* ===== রিভিউ সেকশন ===== */
+        .reviews-section {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .reviews-header .title {
+            color: #c8d0e0;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .reviews-header .title span {
+            color: #ffd700;
+        }
+
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #4ade80;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .live-badge .dot {
+            width: 7px;
+            height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse-dot 1.4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.7); }
+        }
+
+        /* ===== রিভিউ লিস্ট ===== */
+        #review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 340px;
+            overflow-y: auto;
+            padding-right: 3px;
+        }
+
+        #review-list::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        #review-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        #review-list::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 10px;
+        }
+
+        .review-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            animation: slideIn 0.45s ease forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .review-card:nth-child(1) { animation-delay: 0.04s; }
+        .review-card:nth-child(2) { animation-delay: 0.08s; }
+        .review-card:nth-child(3) { animation-delay: 0.12s; }
+        .review-card:nth-child(4) { animation-delay: 0.16s; }
+        .review-card:nth-child(5) { animation-delay: 0.20s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .review-card .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            flex-shrink: 0;
+            background: #2a2f4a;
+        }
+
+        .review-card .r-info {
+            flex: 1;
+        }
+
+        .review-card .r-info .r-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .review-card .r-info .r-name strong {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .review-card .r-info .r-name .time {
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        .review-card .r-info .r-comment {
+            color: #c8d0e0;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-top: 1px;
+        }
+
+        .review-card .r-info .r-comment .highlight {
+            color: #ffd700;
+        }
+
+        /* ===== রেসপনসিভ ===== */
+        @media (max-width: 420px) {
+            .container { padding: 20px 14px 16px; }
+            .header h1 { font-size: 24px; }
+            .gift-card-display .card-amount { font-size: 44px; }
+            .convince-box .big-text { font-size: 15px; }
+            .cta-btn { font-size: 16px; padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ===== হেডার ===== -->
+    <div class="header">
+        <span class="gift-icon">🎁</span>
+        <div class="badge">🔥 Limited Time Offer</div>
+        <h1>Win a FREE <br><span>$100 PayPal</span> Gift Card</h1>
+        <div class="sub">Enter now for your chance to win instantly!</div>
+    </div>
+
+    <!-- ===== গিফট কার্ড ===== -->
+    <div class="gift-card-display">
+        <div class="card-label">💰 Gift Card Value</div>
+        <div class="card-amount">$100</div>
+        <div class="card-brand">PayPal</div>
+    </div>
+
+    <!-- ===== ✅ কনভিন্সিং ডিসক্রিপশন ===== -->
+    <div class="convince-box">
+        <div class="big-text">
+            🚀 <span class="gold">Get Your $100 in 2 Minutes!</span>
+        </div>
+        <div class="small-text">
+            <span class="check">✅</span> Just enter your email — no surveys, no credit card, no hidden fees!<br>
+            <span class="check">✅</span> <strong>100% free</strong> and available for all US residents.<br>
+            <span class="check">✅</span> Instant payout directly to your <strong>PayPal account</strong>.
+        </div>
+    </div>
+
+    <!-- ===== কনটেস্ট রুলস ===== -->
+    <div class="rules-box">
+        <div class="rules-title">📋 Contest Rules</div>
+        <div class="rules-list">
+            <span>✅ <strong>1</strong> Winner Selected</span>
+            <span>📍 <strong>US</strong> Only</span>
+            <span>📧 Valid <strong>Email</strong> Required</span>
+            <span>⚡ Instant <strong>Payout</strong></span>
+        </div>
+    </div>
+
+    <!-- ===== সিটিএ বাটন ===== -->
+    <a href="https://app.hawktrk.com/click?pid=2&offer_id=576&sub2=u810457&sub5=s1SUBID1HERE" class="cta-btn" target="_blank">
+        Claim Your $100 Now
+        <small>🔒 100% Free • No Credit Card Needed</small>
+    </a>
+
+    <!-- ===== লাইভ রিভিউ ===== -->
+    <div class="reviews-section">
+        <div class="reviews-header">
+            <div class="title">💬 Recent Winners (<span id="total-count">1,423</span>)</div>
+            <div class="live-badge">
+                <span class="dot"></span>
+                <span id="live-count">8</span> online
+            </div>
+        </div>
+        <div id="review-list"></div>
+    </div>
+
+</div>
+
+<script>
+    // ===== ডাটা =====
+    const NAMES = [
+        "Jessica M.", "Michael T.", "Sarah J.", "David R.", "Emily W.",
+        "James C.", "Amanda R.", "Robert T.", "Megan B.", "Brian K.",
+        "Ashley M.", "William D.", "Stephanie M.", "Kevin J.", "Rachel G.",
+        "John D.", "Chris P.", "Amanda S.", "Jason B.", "Nicole W.",
+        "Daniel K.", "Laura S.", "Matthew V.", "Rebecca T.", "James L.",
+        "Lisa H.", "Kevin M.", "Sandra B.", "Eric R.", "Kimberly N."
+    ];
+
+    const STATES = ["TX", "CA", "OH", "FL", "NY", "IL", "GA", "MI", "AZ", "PA", "NV", "WA", "VA", "NC", "CO"];
+
+    const AVATARS = [
+        "https://i.pravatar.cc/100?img=1",
+        "https://i.pravatar.cc/100?img=2",
+        "https://i.pravatar.cc/100?img=3",
+        "https://i.pravatar.cc/100?img=4",
+        "https://i.pravatar.cc/100?img=5",
+        "https://i.pravatar.cc/100?img=6",
+        "https://i.pravatar.cc/100?img=7",
+        "https://i.pravatar.cc/100?img=8",
+        "https://i.pravatar.cc/100?img=9",
+        "https://i.pravatar.cc/100?img=10",
+        "https://i.pravatar.cc/100?img=11",
+        "https://i.pravatar.cc/100?img=12"
+    ];
+
+    const COMMENTS = [
+        "OMG I actually won! $100 PayPal just hit my account! 😍🎉",
+        "Easiest $100 I ever made. Just entered my email and boom!",
+        "Legit giveaway! Received my $100 PayPal gift card instantly!",
+        "Was skeptical but it's 100% real. Thanks so much! 🙌",
+        "Just claimed my $100 PayPal. This is insane! 🔥",
+        "Verified! $100 PayPal reward is waiting for you too.",
+        "Fastest $100 I've ever received. Highly recommend!",
+        "I can't believe it worked! $100 PayPal in my account!",
+        "So glad I entered. $100 PayPal just arrived! 💸",
+        "This is 100% legit! Got my $100 PayPal within minutes."
+    ];
+
+    // ===== রিভিউ সিস্টেম =====
+    const reviewList = document.getElementById('review-list');
+    const totalCountEl = document.getElementById('total-count');
+    const liveCountEl = document.getElementById('live-count');
+
+    let totalReviews = 1423;
+    const maxReviews = 12;
+
+    let usedNames = [];
+    let usedAvatars = [];
+    let usedComments = [];
+
+    function getUniqueData() {
+        let availNames = NAMES.filter(n => !usedNames.includes(n));
+        let availAvatars = AVATARS.filter(a => !usedAvatars.includes(a));
+        let availComments = COMMENTS.filter(c => !usedComments.includes(c));
+
+        if (availNames.length === 0) availNames = NAMES;
+        if (availAvatars.length === 0) availAvatars = AVATARS;
+        if (availComments.length === 0) availComments = COMMENTS;
+
+        const name = availNames[Math.floor(Math.random() * availNames.length)];
+        const avatar = availAvatars[Math.floor(Math.random() * availAvatars.length)];
+        const comment = availComments[Math.floor(Math.random() * availComments.length)];
+
+        usedNames.push(name);
+        usedAvatars.push(avatar);
+        usedComments.push(comment);
+
+        if (usedNames.length > maxReviews) {
+            usedNames.shift();
+            usedAvatars.shift();
+            usedComments.shift();
+        }
+
+        return { name, avatar, comment };
+    }
+
+    function getTimeAgo() {
+        const mins = Math.floor(Math.random() * 7) + 1;
+        if (mins === 1) return "1m ago";
+        return `${mins}m ago`;
+    }
+
+    function createReviewCard(time = null) {
+        const data = getUniqueData();
+        const state = STATES[Math.floor(Math.random() * STATES.length)];
+        const timeText = time || getTimeAgo();
+
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.innerHTML = `
+            <img src="${data.avatar}" class="avatar" alt="User">
+            <div class="r-info">
+                <div class="r-name">
+                    <strong>${data.name} (${state})</strong>
+                    <span class="time">${timeText}</span>
+                </div>
+                <div class="r-comment">${data.comment}</div>
+            </div>
+        `;
+        return card;
+    }
+
+    // ===== শুরুতে ১২টি রিভিউ =====
+    for (let i = 0; i < maxReviews; i++) {
+        let time;
+        if (i < 2) time = "Just now";
+        else if (i < 5) time = "2m ago";
+        else if (i < 8) time = "5m ago";
+        else time = "10m ago";
+        reviewList.appendChild(createReviewCard(time));
+    }
+
+    // ===== প্রতি ৬ সেকেন্ডে নতুন রিভিউ =====
+    setInterval(() => {
+        const newCard = createReviewCard("Just now");
+        reviewList.insertBefore(newCard, reviewList.firstChild);
+
+        totalReviews++;
+        totalCountEl.innerText = totalReviews.toLocaleString();
+
+        const live = Math.floor(Math.random() * 7) + 5;
+        liveCountEl.innerText = live;
+
+        if (reviewList.children.length > maxReviews) {
+            reviewList.removeChild(reviewList.lastChild);
+        }
+    }, 6000);
+
+    // ===== লাইভ কাউন্ট র্যান্ডম =====
+    setInterval(() => {
+        const live = Math.floor(Math.random() * 7) + 5;
+        liveCountEl.innerText = live;
+    }, 10000);
+</script>
+
+</body>
+</html>
